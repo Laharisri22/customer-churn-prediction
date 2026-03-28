@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="bubbles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+
+
+<div class="glass-container">
+
+    <h1><i class="fas fa-user"></i> Churn Predictor</h1>
+
+    <form action="/predict" method="post">
+
+        <div class="input-box">
+            <i class="fas fa-clock"></i>
+            <input type="number" name="tenure" placeholder="Tenure" required>
+        </div>
+
+        <div class="input-box">
+            <i class="fas fa-money-bill"></i>
+            <input type="number" name="MonthlyCharges" placeholder="Monthly Charges" required>
+        </div>
+
+        <div class="input-box">
+            <i class="fas fa-wallet"></i>
+            <input type="number" name="TotalCharges" placeholder="Total Charges" required>
+        </div>
+
+        <div class="input-box">
+            <select name="Contract">
+                <option value="0">Month-to-Month</option>
+                <option value="1">One Year</option>
+                <option value="2">Two Year</option>
+            </select>
+        </div>
+
+        <div class="input-box">
+            <select name="InternetService">
+                <option value="0">DSL</option>
+                <option value="1">Fiber</option>
+                <option value="2">No Internet</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn">Predict 🚀</button>
+        <a href="/dashboard" class="btn">📊 View Dashboard</a>
+
+    </form>
+
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<div class="toggle-container">
+    <button onclick="toggleMode()">🌙</button>
+</div>
+</body>
+</html>

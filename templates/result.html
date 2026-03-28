@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="bubbles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="glass-container fade">
+
+    <h1>Result</h1>
+
+    <h2>{{ prediction_text }}</h2>
+    <h3>Probability: {{ probability }}%</h3>
+
+    <a href="/" class="btn">🔙 Try Again</a>
+
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<div class="toggle-container">
+    <button onclick="toggleMode()">🌙</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="bubbles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="glass-container">
+
+    <h1>📊 Prediction Dashboard</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tenure</th>
+                <th>Monthly</th>
+                <th>Total</th>
+                <th>Result</th>
+                <th>Prob %</th>
+            </tr>
+        </thead>
+
+            <tbody>
+    {% for row in data %}
+    <tr>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+
+        <td>
+            {% if "CHURN" in row[6] %}
+                <span style="color:red;">❌ Churn</span>
+            {% else %}
+                <span style="color:lightgreen;">✅ Stay</span>
+            {% endif %}
+        </td>
+
+        <td>{{ (row[7]*100) | round(2) }}%</td>
+    </tr>
+    {% endfor %}
+</tbody>
+
+    <a href="/" class="btn">⬅ Back</a>
+
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<div class="toggle-container">
+    <button onclick="toggleMode()">🌙</button>
+</div>
+
+</body>
+</html>
