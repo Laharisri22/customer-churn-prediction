@@ -8,7 +8,10 @@ app = Flask(__name__)
 # ==============================
 # Load ML Model
 # ==============================
-model = pickle.load(open('model.pkl', 'rb'))
+import os
+
+model_path = os.path.join(os.path.dirname(__file__), 'model.pkl')
+model = pickle.load(open(model_path, 'rb'))
 
 # ==============================
 # Create Database
