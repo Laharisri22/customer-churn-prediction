@@ -30,7 +30,7 @@ color: black;
 }
 /* Dark */
 input, select {
-    color: white;
+    color: black;
     background: rgba(255,255,255,0.1);
 }
 /* Apply transition ONLY when this class is active */
