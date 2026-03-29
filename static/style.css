@@ -6,7 +6,7 @@ body {
     background: linear-gradient(135deg, #0f172a, #1e293b, #0ea5e9);
 
     height: 100vh;
-color: white;
+color: black;
     display: flex;
     justify-content: center;
     align-items: center;   /* 🔥 THIS centers vertically */
@@ -66,17 +66,14 @@ input, select {
 }
 input, select {
     width: 100%;
-    padding: 12px;
+    height: 45px;
+    padding: 10px;
     margin: 10px 0;
-
-    border-radius: 10px;
+    border-radius: 8px;
     border: none;
-
-    background: rgba(255,255,255,0.1);
-    color: white;
-
     outline: none;
-    transition: 0.3s;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
 input:focus, select:focus {
